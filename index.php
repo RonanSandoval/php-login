@@ -49,18 +49,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1> MyFake</h2>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-        <h2> Welcome to MyFake</h2>
-        Username: <br>
+        <h2>Register</h2>
+        Username <br>
         <input type="text" name="username" <?php if(isset($_SESSION['username']) && $_SESSION['username']!=""){echo " value='".$_SESSION['username']."'";} ?>><br>
-        Password: <br>
+        Password <br>
         <input type="password" name="password" <?php if(isset($_SESSION['password']) && $_SESSION['password']!=""){echo " value='".$_SESSION['password']."'";} ?>><br>
-        Re-enter Password: <br>
+        Re-enter Password <br>
         <input type="password" name="reenter" <?php if(isset($_SESSION['reenter']) && $_SESSION['reenter']!=""){echo " value='".$_SESSION['reenter']."'";} ?>><br>
-        <input type="submit" name="submit" value="register"><br>
-        <?php if(isset($message) && $message != ""){echo "$message";}?>
+        <input type="submit" class="submit" name="submit" value="Register"><br>
+        <div class="error"><?php if(isset($message) && $message != ""){echo "$message";}?></div>
         
  
     </form>
